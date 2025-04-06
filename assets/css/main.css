@@ -1874,7 +1874,7 @@ input, select, textarea {
   top: 1px;
   bottom: 1px;
   border-radius: 4px;
-  background-color: transparent;
+  background-color: white;
   z-index: -1;
 }
 		input[type="submit"]:after,
