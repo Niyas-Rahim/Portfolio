@@ -174,7 +174,7 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 	h1 {
-		color: #ffffff;	
+		color: #ffffff!important;	
 	}
 	h1, h2, h3, h4, h5, h6 {
 		color: #0B001A;
@@ -1824,6 +1824,7 @@ input, select, textarea {
 	input[type="reset"],
 	input[type="button"],
 	button,
+	button1,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -1858,6 +1859,7 @@ input, select, textarea {
 		input[type="reset"]:after,
 		input[type="button"]:after,
 		button:after,
+		button1:after,
 		.button:after {
 			-moz-transform: scale(0.25);
 			-webkit-transform: scale(0.25);
