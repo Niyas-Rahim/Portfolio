@@ -1839,13 +1839,13 @@ input, select, textarea {
 		border-radius: 3em;
 		background: linear-gradient(transparent),
 			    linear-gradient(to right, #8338EC, #B923FF) border-box;*/
-		 border: none;
-  outline: none;
-  position: relative;
-  border-radius: 5px;
-  background: linear-gradient(to right, #00FFA3, #DC1FFF);
-  cursor: pointer;
-  z-index: 1;
+		border: none;
+  		outline: none;
+ 		position: relative;
+		border-radius: 5px;
+ 		background: linear-gradient(to right, #00FFA3, #DC1FFF);
+  		cursor: pointer;
+ 		z-index: 1;
 		color: #0B001A !important;
 		cursor: pointer;
 		display: inline-block;
@@ -1874,7 +1874,7 @@ input, select, textarea {
   top: 1px;
   bottom: 1px;
   border-radius: 4px;
-  background-color: white;
+  background-color: transparent;
   z-index: -1;
 }
 		input[type="submit"]:after,
