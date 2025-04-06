@@ -173,9 +173,11 @@ input, select, textarea {
 	p {
 		margin: 0 0 2em 0;
 	}
-
+	h1 {
+		color: #ffffff;	
+	}
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #0B001A;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -3088,15 +3090,15 @@ input, select, textarea {
 				text-align: center;
 			}
 
-		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.02);
+		/*.spotlights > section:nth-child(2) {
+			/*background-color: rgba(0, 0, 0, 0.02);
 		}
 		.spotlights > section:nth-child(3) {
 			background-color: rgba(0, 0, 0, 0.04);
 		}
 		.spotlights > section:nth-child(5) {
 			background-color: rgba(0, 0, 0, 0.02);
-		}
+		}*/
 
 		.spotlights > section.inactive > .image:before,
 		body.is-preload .spotlights > section > .image:before,
@@ -3287,7 +3289,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #f77f00;
+			background-color: #E9DEFF;
 			/* background-color: #5e42a6; */
 			/* background-color: #5052b5; */
 			
