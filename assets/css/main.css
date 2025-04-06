@@ -1866,7 +1866,7 @@ input, select, textarea {
 	.button1{
 		color:#ffffff!important;
 	}
-	.button::before {
+	.button1::before {
   content: "";
   position: absolute;
   left: 1px;
