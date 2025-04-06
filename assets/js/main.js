@@ -183,7 +183,7 @@
 	  // Type_animation.
 			  document.addEventListener("DOMContentLoaded", function () {
 			      new Typed("#typed", {
-			        strings: ["Hi, I'm Niyas Rahim"],
+			        strings: ["I'm Niyas Rahim"],
 			        typeSpeed: 60,
 			        backSpeed: 40,
 			        backDelay: 1200,    // wait before deleting
