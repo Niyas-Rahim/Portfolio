@@ -4217,9 +4217,9 @@ input, select, textarea {
 		  align-items: center;
 		}
 			.swiper-slide img {
-			  width: 100%;
+			  width: 80%;
 			  height: auto;
-			  border-radius: 8px;
+			  /* border-radius: 8px; */
 			}
 			.swiper-slide h3 {
 			  font-size: 20px;
@@ -4420,9 +4420,6 @@ input, select, textarea {
 					flex-direction: column;
 					height:auto;
 				}
-				.item img {
-					width: 316px;
-				}
 				.wrapper > .inner {
 					/* padding: 2em 2em 1em 2em; */
 				}
@@ -4501,7 +4498,7 @@ input, select, textarea {
 				.stacked-layout {
 					display: flex;
 					flex-direction: column;
-					height:auto;
+					height:auto!important;
 				}
 				.filter-btns .active {
 					margin: 0 5px;
@@ -4516,9 +4513,6 @@ input, select, textarea {
 					position: relative !important;
 					margin-bottom: 20px!important;
 					margin:0 auto;
-				}
-				.item img{
-					width:480px;
 				}
 				.wrapper > .inner {
 					padding: 2em 2em 1em 2em;
@@ -4752,25 +4746,12 @@ input, select, textarea {
 				.mover.moving {
 					width: auto;
 				}
-				.stacked-layout {
-					height: auto !important;
-					display: flex;
-					flex-direction: column;
-				}
 				.filter-btns .active {
 					margin: 5px;
 				}
 				.filter-btns button{
 					font-size:12px;
 					margin: 5px;
-				}
-				.item {
-					width: fit-content;
-					left: 0 !important;
-					top: auto !important;
-					position: relative !important;
-					margin-bottom: 20px!important;
-					margin:0 auto;
 				}
 				.wrapper > .inner {
 					padding: 2em 2em 1em 2em;
