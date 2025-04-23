@@ -15,45 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getLayoutConfig() {
     const width = window.innerWidth;
+    const containerWidth = container.offsetWidth;
+
     if (width < 768) {
-      return { columns: 1, gap: 16, itemWidth: container.offsetWidth };
+      return { columns: 1, gap: 16, itemWidth: containerWidth };
     } else if (width < 1024) {
-      return { columns: 2, gap: 20, itemWidth: (container.offsetWidth - 20) / 2 };
+      return { columns: 2, gap: 20, itemWidth: (containerWidth - 20) / 2 };
     } else {
-      return { columns: 3, gap: 20, itemWidth: 340 };
+      return { columns: 3, gap: 20, itemWidth: (containerWidth - 40) / 3 };
     }
-  }
-
-  function applyManualStackedLayout() {
-    if (!container) return;
-
-    items.forEach(item => {
-      item.style.display = 'block';
-    });
-
-    if (window.innerWidth < 768) {
-      items.forEach(item => {
-        item.style.position = 'relative';
-        item.style.top = 'auto';
-        item.style.left = 'auto';
-        item.style.width = '100%';
-        item.style.display = 'block';
-      });
-      // container.style.height = '100%';
-      return;
-    }
-
-    container.style.position = 'relative';
-
-    items.forEach(item => {
-      const top = parseInt(item.dataset.top) || 0;
-      const left = parseInt(item.dataset.left) || 0;
-
-      item.style.display = 'block';
-      item.style.position = 'absolute';
-      item.style.top = `${top}px`;
-      item.style.left = `${left}px`;
-    });
   }
 
   function applyFilteredMasonryLayout(filter) {
@@ -115,31 +85,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Initial layout load
-  const initialFilter = document.querySelector(".filter-btns .active")?.dataset.filter || "*";
-  if (initialFilter === "all" || initialFilter === "*") {
-    applyManualStackedLayout();
-  } else {
-    applyFilteredMasonryLayout(initialFilter);
-  }
+  // Initial layout
+  applyFilteredMasonryLayout("*");
 
   // Filter buttons
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelector(".filter-btns .active")?.classList.remove("active");
       btn.classList.add("active");
-
       const filter = btn.dataset.filter;
 
-      if (filter === "all") {
-        items.forEach(item => {
-          item.style.display = '';
-          item.style.position = '';
-          item.style.top = '';
-          item.style.left = '';
-          item.style.width = '';
-        });
-        applyManualStackedLayout();
+      if (filter === "" || filter === "all" || filter === "*") {
+        applyFilteredMasonryLayout("*");
       } else {
         applyFilteredMasonryLayout(filter);
       }
@@ -153,14 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const clickedItem = icon.closest(".item");
       let activeFilter = document.querySelector(".filter-btns .active")?.dataset.filter || "*";
 
-      if (activeFilter === "*") {
+      // On "All", use clicked item's category
+      if (activeFilter === "*" || activeFilter === "all") {
         activeFilter = clickedItem.dataset.category;
       }
 
-      const visibleItems = Array.from(items).filter((item) => {
-        const match = item.dataset.category === activeFilter;
-        return item.style.display !== "none" && match;
-      });
+      const visibleItems = Array.from(items).filter(item =>
+        item.style.display !== "none" && item.dataset.category === activeFilter
+      );
 
       swiperWrapper.innerHTML = "";
 
@@ -207,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Close lightbox
   closeBtn.addEventListener("click", () => {
     lightbox.classList.add("hidden");
     if (swiper) swiper.autoplay.stop();
@@ -231,17 +189,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Re-apply layout on window resize (debounced)
-  let resizeTimeout;
+  // On resize, reapply current filter layout
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const activeFilter = document.querySelector(".filter-btns .active")?.dataset.filter || "*";
-      if (activeFilter === "all" || activeFilter === "*") {
-        applyManualStackedLayout();
-      } else {
-        applyFilteredMasonryLayout(activeFilter);
-      }
-    }, 150);
+    const activeFilter = document.querySelector(".filter-btns .active")?.dataset.filter || "*";
+    if (activeFilter === "*" || activeFilter === "all") {
+      applyFilteredMasonryLayout("*");
+    } else {
+      applyFilteredMasonryLayout(activeFilter);
+    }
   });
 });
