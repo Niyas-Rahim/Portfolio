@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (width < 1024) {
       return { columns: 2, gap: 20, itemWidth: (container.offsetWidth - 20) / 2 };
     } else {
-      return { columns: 3, gap: 20, itemWidth: 300 };
+      return { columns: 3, gap: 20, itemWidth: 340 };
     }
   }
 
