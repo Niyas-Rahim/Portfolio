@@ -4208,7 +4208,7 @@ input, select, textarea {
 		  background: rgba(0, 0, 0, 0.7);
 		  padding: 20px;
 		  border-radius: 10px;
-			height: auto;
+		  height: auto;
 		}
 		.swiper-slide {
 		  text-align: center;
@@ -4243,9 +4243,9 @@ input, select, textarea {
 		}
 		.open-lightbox {
 		  color: #0B001A;
-		  font-size: 20px;
+		  font-size: 16px;
 		  position: absolute;
-		  right: 25px;
+		  right: 10px;
 		  top: 15px;
 		  cursor: pointer;
 		  box-shadow:none;
@@ -4323,7 +4323,11 @@ input, select, textarea {
 					padding: 3em 3em 2em 3em ;
 				}
 			}
-
+			@media screen and (max-width: 1280px) {
+				.swiper {
+					margin-left: 345px;
+				}
+			}
 			@media (min-width: 1024px) and (max-width: 1279px) {
 				.wrapper.fullscreen {
 					min-height: calc(100vh - 2.5em);
@@ -4340,12 +4344,22 @@ input, select, textarea {
 					margin-left: 18em;
 					padding-top:	0;
 				}
+				.gallery-area .mover .overlayMove .overlay-content h2 {
+					font-size: 18px;
+				}
+				.swiper {
+					width:80%;
+					margin-left: 275px;
+				}
 				.portfolio {
 					padding: 50px 20px;
 					margin: 0 40px;
 				}
-				.item img {
-					width: 300px;
+				.filter-btns button{
+					font-size:14px;
+				}
+				.overlay h3 {
+					font-size: 14px;
 				}
 				.row {
 					margin: 0!important;
@@ -4411,9 +4425,6 @@ input, select, textarea {
 				}
 				.mover.moving {
 					width: 690px;
-				}
-				.portfolio {
-					
 				}
 				.stacked-layout {
 					display: flex;
@@ -4494,6 +4505,9 @@ input, select, textarea {
 				.portfolio {
 					padding: 50px 0px;
 					margin: 0 30px;
+				}
+				.swiper { 
+					margin-left: 220px;
 				}
 				.stacked-layout {
 					display: flex;
