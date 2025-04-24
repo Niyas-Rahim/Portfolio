@@ -4325,7 +4325,12 @@ input, select, textarea {
 			}
 			@media screen and (max-width: 1280px) {
 				.swiper {
-					margin-left: 345px;
+					margin-left: 350px!important;
+					padding:50px;
+				}
+				.close-lightbox{
+					top:0;
+					right:0;
 				}
 			}
 			@media (min-width: 1024px) and (max-width: 1279px) {
@@ -4363,6 +4368,14 @@ input, select, textarea {
 				}
 				.row {
 					margin: 0!important;
+				}
+				.swiper {
+					margin-top: 60px;
+				}
+				.close-lightbox{
+					top: 0;
+					right: 0;
+					z-index:1;
 				}
 				.features {
 					padding: 0px 20px;
@@ -4629,6 +4642,13 @@ input, select, textarea {
 				.item img{
 					width:540px;
 				}
+				.swiper {
+					margin-top: 60px;
+				}
+				.close-lightbox{
+					top: 50px;
+					right: -25px;
+				}
 				.wrapper > .inner {
 					padding: 2em 2em 1em 2em;
 				}
@@ -4766,6 +4786,11 @@ input, select, textarea {
 				.filter-btns button{
 					font-size:12px;
 					margin: 5px;
+				}
+				.close-lightbox{
+					top: 120px;
+					right: -20px;
+					z-index:1;
 				}
 				.wrapper > .inner {
 					padding: 2em 2em 1em 2em;
