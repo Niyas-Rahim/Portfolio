@@ -2996,7 +2996,7 @@ input, select, textarea {
 
 		.split > :nth-child(2n - 1) {
 			padding-right: 2.5em;
-			border-right: solid 1px rgb(255 255 255 / 25%);
+			border-right: solid 1px rgba(30, 0, 68, 0.25);
 		}
 
 		.split > :nth-child(2n) {
@@ -3947,9 +3947,9 @@ input, select, textarea {
 				font-size:18px;
 				font-weight:400;
 				text-align:justify;
-				background: linear-gradient(45deg, #00000018, transparent);
-				-webkit-background-clip: content-box;
-				background-clip: content-box;
+				/* background: linear-gradient(45deg, #00000018, transparent); */
+				/* -webkit-background-clip: content-box; */
+				/* background-clip: content-box; */
 		}
 	/* Service */
 		.row {
@@ -3965,9 +3965,24 @@ input, select, textarea {
 			border-radius: 3px;
 			background: #E9DEFF;
 		}
+		.service h2{
+			color:#1E0044;
+			margin-bottom:0;
+			font-weight: 100;
+		}
 		.service h3{
 			padding-top: 30px;
-		}		  
+		}
+		.skill-direction{
+			display:flex;
+		}
+		/* .icon-animation{ */
+			/* font-weight: 100; */
+			/* color: #1E0044; */
+			/* font-size: 18px; */
+			/* margin: 10px; */
+			/* animation: bounce 2s infinite ease-in-out; */
+		/* }		 */
 		.service_box{
 			width:400px;
 			text-align:justify;
@@ -3992,15 +4007,74 @@ input, select, textarea {
 		.features section:nth-child(5){
 			display: none;
 		}
-		#three h2 {
-			color: #ffffff !important;
-		}
 		.features > section > h3 {
 			color: #313131 !important;
 		}
 		.features > section > p {
 			color: #3a3a3a !important;
 		} 
+		.moving-carousel{
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.animated-carousel{
+			-webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+			mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+		}
+		.carousel:hover .moving-carousel{	
+			animation-play-state: paused;
+		}
+		.carousel{
+			display: flex;
+			overflow: hidden;
+			flex-wrap: nowrap;
+		}
+		.carousel
+		.moving-carousel{
+			animation: scroll linear infinite;
+			animation-duration: 30s;
+			animation-play-state: running;
+			flex-shrink: 0;
+			justify-content: space-evenly;
+			min-width: 70%;
+		}
+		.carousel-list
+		.carousel{
+			display: flex;
+			justify-content: center;
+		}
+		.carousel-list{
+				align-items: center;
+				height: 80px;
+				min-width: auto;
+				padding-left: 24px;
+				padding-right: 24px;
+				padding-top: 24px;
+		} 
+		.carousel-img{
+			height: 50px;
+			max-width: 100%;
+		}  
+		/* @keyframes bounce { */
+			/* 0%, 100% { */
+			  /* transform: translateY(0); */
+			/* } */
+			/* 50% { */
+			  /* transform: translateY(10px); */
+			/* } */
+		/* }		 */
+		@keyframes scroll {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
 		
 /* Moving Hover */
 	.gallery{
@@ -4806,11 +4880,8 @@ input, select, textarea {
 				.features section:nth-child(5){
 					margin: 0!important;
 				}
-				.features section:nth-child(5){
-					display:block;
-				}
-				.features section:nth-child(3){
-					display: none;
+				.features section:nth-child(6){
+					display:none;
 				}
 				.service_box {
 					width: auto;
@@ -4829,7 +4900,7 @@ input, select, textarea {
 					width:255px;
 					height:255px;
 				}
-				.floating-image3{
+				.floating-image2{
 					width:215px;
 					height:215px;
 				}
